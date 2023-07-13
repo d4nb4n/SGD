@@ -1,0 +1,1172 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html>
+<head>
+    <meta name='viewport' http-equiv='Content-Type' content='width=device-width, initial-scale=1.0' charset=UTF-8">
+    <title>Portal de Atendimento ao Cliente - SUPORTE</title>
+    <META HTTP-EQUIV='CACHE-CONTROL' CONTENT='NO-CACHE'>
+    <meta Http-Equiv='Pragma' Content='no-cache'>  
+    <meta Http-Equiv='Expires' Content='0'>
+    <script type='text/javascript' src='/lib/novoLayout/bootstrap-4.5.0-dist/utils.js?version=24'></script>
+    <script type='text/javascript' src='/lib/novoLayout/bootstrap-4.5.0-dist/query-3.5.1.slim.min.js'></script>
+    <script type='text/javascript' src='/lib/novoLayout/bootstrap-4.5.0-dist/popper.min.js'></script>
+    <script type='text/javascript' src='/lib/novoLayout/bootstrap-4.5.0-dist/js/bootstrap.bundle.js'></script>
+    <script type='text/javascript' src='/lib/novoLayout/bootstrap-4.5.0-dist/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src='/lib/novoLayout/bootstrap-4.5.0-dist/js/bootstrap.js'></script>
+    <script type='text/javascript' src='/lib/novoLayout/bootstrap-4.5.0-dist/js/bootstrap.min.js'></script>
+    <link rel='stylesheet' href='/lib/novoLayout/bootstrap-4.5.0-dist/css/bootstrap-grid.css' type='text/css'> 
+    <link rel='stylesheet' href='/lib/novoLayout/bootstrap-4.5.0-dist/css/bootstrap-grid.min.css' type='text/css'> 
+    <link rel='stylesheet' href='/lib/novoLayout/bootstrap-4.5.0-dist/css/bootstrap-reboot.css' type='text/css'> 
+    <link rel='stylesheet' href='/lib/novoLayout/bootstrap-4.5.0-dist/css/bootstrap-reboot.min.css' type='text/css'> 
+    <link rel='stylesheet' href='/lib/novoLayout/bootstrap-4.5.0-dist/css/bootstrap.css' type='text/css'> 
+    <link rel='stylesheet' href='/lib/novoLayout/bootstrap-4.5.0-dist/css/bootstrap.min.css?1422981258' type='text/css'> 
+    <link rel='stylesheet' href='/lib/novoLayout/style.css?70' type='text/css'/>
+    <script type='text/javascript' src='/lib/novoLayout/ie-pattern.js?1'></script>
+    <link rel='stylesheet' href='/lib/novoLayout/selectize-bootstrap4-theme/css/selectize.bootstrap4.css?1422981258' type='text/css'/>
+    <script type='text/javascript' src='/lib/novoLayout/selectize-bootstrap4-theme/js/selectize.js?1422981258'></script>
+    <script type='text/javascript' src='/lib/dropzone-5.7.0/dist/dropzone.js?1'></script>
+    <link rel='stylesheet' href='/lib/dropzone-5.7.0/dist/dropzone.css?1' type='text/css'/>
+    <link rel='stylesheet' href='/lib/novoLayout/jquery-ui/css/jquery-ui.css?1422981258' type='text/css'/>
+    <script type='text/javascript' src='/lib/novoLayout/jquery-ui/js/jquery-ui.js?1422981258'></script>
+   <script type='text/javascript' src='/lib/novoLayout/jquery-mask/js/jquery.mask.js?1422981258'></script>
+   <script type='text/javascript' src='/lib/novoLayout/jquery-mask/js/query.mask.min.js?1422981258'></script>
+   <script type='text/javascript' src='/lib/novoLayout/jquery-mask-money/js/jquery.maskMoney.min.js?1422981258'></script>
+   <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous'>   
+   <link rel='stylesheet' href='/lib/novoLayout/datatable/css/datatables.css?1422981258' type='text/css'/>
+   <script type='text/javascript' src='/lib/novoLayout/datatable/js/datatables.js?1422981258'></script>
+   <script type='text/javascript' src='/lib/novoLayout/jquery-validate/js/jquery.validate.min.js?1422981258'></script>
+   <script type='text/javascript' src='/lib/novoLayout/jquery-validate/js/additional-methods.min.js?1422981258'></script>
+   <script type='text/javascript' charset='ISO-8859-1' src='/lib/novoLayout/pattern.js?65'></script>
+    <script type='text/javascript' src='/lib/jquery-base64/jquery.base64.js'></script>
+<script>
+function highlightCurrentPage() {
+    jQuery('a[id=menuSgscSscs]').addClass('current-menu');    jQuery('button[id=menuSgscSscs]').addClass('current-menu');};    $(document).ready(function () {
+            highlightCurrentPage();
+            var menu = $('.nav-bar-filter'),
+                more = $('#moreNav'),
+                menuTotal = $('.filter-wrapper'),
+                ww = $(window).width(),
+                smw = more.outerWidth();
+            menu.children('li').each(function () {
+               var w = $(this).outerWidth();
+                if (w > smw) smw = w + 20;
+                  return smw
+            });
+          contract();
+          more.css('width', smw);
+          function contract() {
+              var w = 0,
+                  outerWidth = menuTotal.width() - 250;
+              for (i = 0; i < menu.children('li').length; i++) {
+                  w += menu.children('li').eq(i).outerWidth();                    
+                  if (w > outerWidth) {                       
+                      menu.children('li').eq(i - 1).nextAll()
+                          .detach()
+                          .prependTo('.sidenav-more');
+                      break;
+                  }
+              }
+              if ($('.sidenav-more').children('li').length > 1){
+                  more.css('visibility', 'visible');
+              }
+          }
+          function expand() {
+              var widthSideBar = 0;
+              var w = 0,
+                  outerWidth = menuTotal.width() - smw - 250;
+              menu.children('li').each(function () {
+                  w += $(this).outerWidth();
+                  return w;
+              });
+              console.log('expand');
+              var numberOfSubMenu = $('.sidenav-more').children('li').length
+              for (i = 0; i < numberOfSubMenu; i++) {
+                 var lengthMenu =$('.sidenav-more').children('li').eq(i).outerWidth();
+                 if (lengthMenu =! 'undefined') {
+                  w += lengthMenu;
+                 }
+                  if (w < outerWidth) {
+                      var a = -1;
+                      while (a < i) {
+                          $('.sidenav-more').children('li').eq(0)
+                              .detach()
+                              .appendTo(menu);
+                          a++;
+                      }
+                  }
+              }
+              if ($('.sidenav-more').children('li').length == 0){
+                  more.css('visibility', 'hidden');
+              }
+          }
+          $(window).on('resize', function (e) {
+              ($(window).width() > ww) ? expand(): contract();
+              ww = $(window).width();
+          });            
+         $('.sidebar-collapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            contract();
+            updateOverlay();
+          });
+         $('.sidebar-right-collapse').on('click', function () {
+            $('#sidebarRight').toggleClass('active');
+            contract();
+            updateOverlay();
+          });
+         $(window).on('resize', function (e) {
+            ($(window).width() > ww) ? expand() : contract();
+             ww = $(window).width();
+         });
+         $('#overlay').on('click', function () {
+             $('#sidebar').removeClass('active');
+             $('#sidebarRight').removeClass('active');
+             updateOverlay(); 
+         }); 
+         $('.container').on('click',function(){            $('.sidenav').css('display','none');         });         adjustDropdown();         function adjustDropdown() {             var dropdown = document.getElementsByClassName('dropdown-btn');
+             var i;
+             for (i = 0; i < dropdown.length; i++) {
+                 dropdown[i].addEventListener('click', function () {
+                     this.classList.toggle('active');
+                     var dropdownContent = this.nextElementSibling;
+                     if (dropdownContent.style.display === 'block') {
+                         dropdownContent.style.display = 'none';
+                     } else {
+                         dropdownContent.style.display = 'block';
+                     }
+                 });
+             }         }      });
+      function updateOverlay() { 
+          if ($('#sidebar').hasClass('active') || $('#sidebarRight').hasClass('active')) { 
+              $('#overlay').addClass('overlay-active'); 
+          } else { 
+              $('#overlay').removeClass('overlay-active'); 
+          }; 
+      }; 
+</script>
+        <div aria-live='polite' aria-atomic='true'>
+          <div class='message'>
+                  <div class='toast message-alert' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='true' data-delay='5000'>
+                    <div class='toast-header '>
+                      <img src='/lib/novoLayout/imagens/' class='rounded mr-2' alt='...'>
+                      <span class='mr-auto'>null</span>
+                      <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
+                        <i class='bui-alert-close-indicator'></i>
+                      </button>
+                    </div>
+                  </div>
+          </div>        </div></head>
+<body onLoad='updateComponents();'>
+<div class='wrapper'>
+    <nav id='sidebar'>
+         <ul class='list-group'>
+             <li class='list-group-item d-flex justify-content-between align-items-center header'> 
+                <h2 class='title-sidebar h5'>MENU</h2>
+                <button type='button' class='close sidebar-collapse' aria-label='Fechar menu'>
+                    <i class='bento-icon-close-x' aria-hidden='true'></i>
+                </button>
+             </li>
+         <li class='list-group-item d-flex justify-content-between align-items-center '>
+            <a class='nav-link'  href='/inicio/faces/index.html'>Inicio</a> 
+             <button type='button' class='close new-tab' aria-label='Close'>
+                 <i class='bento-icon-newtab' aria-hidden='true'></i>
+             </button>
+         </li>
+         <li class='list-group-item d-flex justify-content-between align-items-center '>
+             <a class='nav-link'  href='/onbalance/faces/index.html'>OnBalance</a>
+             <button type='button' class='close new-tab' aria-label='Close'>
+                 <i class='bento-icon-newtab' aria-hidden='true'></i>
+             </button>
+         </li>
+         <li class='list-group-item d-flex justify-content-between align-items-center current-menu'>
+             <a class='nav-link'  href='/sgsc/faces/index.html'>Suporte</a>
+             <button type='button' class='close new-tab' aria-label='Close'>
+                 <i class='bento-icon-newtab' aria-hidden='true'></i>
+             </button>
+         </li>
+       <li class='list-group-item d-flex justify-content-between align-items-center '>
+           <a class='nav-link'  href='/comunidade/faces/index.html'>Comunidade</a>
+           <button type='button' class='close new-tab' aria-label='Close'>
+                <i class='bento-icon-newtab' aria-hidden='true'></i>
+            </button>
+       </li>
+         <li class='list-group-item d-flex justify-content-between align-items-center '>
+             <a class='nav-link' href='/backup/faces/index.html'>Backup</a> 
+             <button type='button' class='close new-tab' aria-label='Close'>
+                 <i class='bento-icon-newtab' aria-hidden='true'></i>
+             </button>
+         </li>
+       <li class='list-group-item d-flex justify-content-between align-items-center '>
+          <a class='nav-link' href='/soucliente/faces/index.html'>Download</a>
+          <button type='button' class='close new-tab' aria-label='Close'>
+              <i class='bento-icon-newtab' aria-hidden='true'></i>
+          </button>
+       </li>
+         <li class='list-group-item d-flex justify-content-between align-items-center '>
+            <a class='nav-link'  href='/contratacao/faces/index.html'>Contratações de Serviços</a> 
+             <button type='button' class='close new-tab' aria-label='Close'>
+                 <i class='bento-icon-newtab' aria-hidden='true'></i>
+             </button>
+         </li>
+         </ul>
+     </nav>
+     <div id='overlay'></div>
+     <div id='content'>
+     <header>         <nav id='globalHeader' class='navbar'>               <div>                   <button class='global-header-hamburguer sidebar-collapse mb-1'>                       <i class='bento-icon-hamburger-menu' aria-hidden='true'></i>
+                   </button>               </div>               <div class='d-flex flex-fill mb-1'>                  <a class='global-header-logo-link'>                    <h1 class='global-header-logo-title-one'>Thomson Reuters</h1>                    <h2 class='global-header-logo-title-two'>SUPORTE</h2>                </a>               </div>           <div class='d-flex menu-linked-accounts justify-content-end flex-column'>               <div class='d-flex txt'>                    <span title='Gerente Anselmo'>Gerente Anselmo                    </span>               </div>               <div class='d-flex txt'>                    <span title='ANSELMO BRITO SANTANA JUNIOR'>ANSELMO BRITO SANTANA JUNIOR                    </span>               </div>           </div>              <div class='d-flex'>                 <div class='dropdown'>
+                         <button class='global-header-hamburguer sidebar-right-collapse mb-1' onclick='searchNewNotifications(true);'>                             <div id='userProfile' class='size-circle'>GA                                <div id='lengthNotify'>                                </div>                             </div>                         </button>
+                      <div class='dropdown-menu global-header-users-dropdown'>
+                          <div class='d-flex flex-column bd-highlight'>                              <div class='p-2'>                                  <h3 class='h2'>Gerente Anselmo                                  </h3>
+                                  <a href='/sgsc/faces/alt-usuario.html' class=''>Exibir Perfil</a>
+                              </div>                              <div class='d-flex align-items-center justify-content-center bd-highlight global-header-users-dropdown-panel-logout'>                              <button class='btn btn-primary btn-sm' onclick="window.location='/logout.html'">SAIR</button>
+                              </div>                          </div>                      </div>
+                  </div>              </div>         </nav>         <nav id='subNav' class='navbar navbar-custom filter-wrapper'>
+                 <ul class='nav-bar-filter'>
+<li><a id='menuSgscInicio' href='/sgsc/faces/inicio.html'>Início</a></li>
+<li><a id='menuSgscCentralSolucoes' href='/sgsc/faces/central-solucoes.html'>Central de Soluções</a></li>
+  <li><a id='menuSgscTreinamentos' href='/sgsc/faces/treinamentos.html'>Treinamentos</a></li>
+  <li><a id='menuSgscNoticias' href='/sgsc/faces/noticias.html'>Notícias</a></li>
+  <li><a id='menuSgscSscs' href='/sgsc/faces/sscs.html'>Solicitações de Suporte</a></li>
+  <li><a id='menuSgscRelatoriosPersonalizados' href='/sgsc/faces/relatorios-personalizados.html'>Relatórios Personalizados</a></li>
+<li><a id='menuSgscExternos' href='/sgsc/faces/externos.html?redirecionar=true'>Atendimentos e Implantações</a></li>
+<li><a id='menuSgscRankingMelhorias' href='/sgsc/faces/ranking-melhorias.html'>Ranking de Melhorias</a></li>
+<li style='width:130px !important'>
+    <button id='menuSgscControle' class='dropdown-btn'>Configuração
+        <i class='fa fa-caret-down'></i>
+    </button>
+    <div class='sidenav sidenav-principal' style='position: relative; width:290px !important'>
+        <a href='/sgsc/faces/d-cliente.html'>Meus Dados</a>
+      <a href='/sgsc/faces/ficha-tecnica.html'>Ficha Técnica</a>
+         <a href='/sgsc/faces/usuarios-escritorio.html'>Usuários Escritório</a>
+    </div>
+</li>
+                 </ul>
+                 <ul id='moreNav' class='more-nav'>
+                     <li>
+                         <button class='dropdown-btn more-button'>Mais                             <i class='fa fa-caret-down'></i>                         </button>
+                         <div class='sidenav-more sidenav' style='position: relative;'></div>
+                     </li>
+                 </ul>
+         </nav>
+     </header
+     <main role='main' class='container'>
+         <div class='container'>
+
+
+
+
+    <form id="sscForm" name="sscForm" method="post" action="/sgsc/faces/ssc.html" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="redirectInfo" value="/sgsc/faces/ssc.html,ssc"/>
+        <input type="hidden" name="ssc" value="22894268"/>
+        <input type="hidden" id="sscForm:sscSatisfacao" name="sscForm:sscSatisfacao" value="" />  
+        <input type="hidden" id="sscForm:sscMotivoInsatisfacao" name="sscForm:sscMotivoInsatisfacao" value="" />  
+        <input type="hidden" id="sscForm:tramitesRecentesTopo" name="sscForm:tramitesRecentesTopo" value="false" />
+        <input type="hidden" id="sscForm:visualizacaoTramiteExpandidada" name="sscForm:visualizacaoTramiteExpandidada" value="false" />
+        <input type="hidden" id="sscForm:permitirContatoAvaliarInsatisfacao" name="sscForm:permitirContatoAvaliarInsatisfacao" value="" />
+        <input type="hidden" id="sscForm:possuiSscDadofaturamento" name="sscForm:possuiSscDadofaturamento" value="" />
+
+        <script>
+
+            $(window).on("load", function () {
+                $('[name=situacaoTramite][value=""]').parent('label').addClass(
+                        'active');
+            });
+
+            $(document).ready(function () {
+                $('[name=situacaoTramite][value=""]').parent('label').addClass(
+                        'active');
+            });
+
+            $(document).ready(function () {
+                atribuirMotivoInsatisfacao(document.getElementById("sscForm:sscMotivoInsatisfacao").value);
+                atribuirSatisfacao(document.getElementById("sscForm:sscSatisfacao").value);
+                
+                $("#sscForm\\:descricaoSatisfacao").attr('disabled', 'disabled');
+                
+                jQuery("input:checkbox[id='sscForm:aceitarFaturamento']").on("click", function () {
+                    if (jQuery(this).is(':checked')) {
+                        showMessageWarning("Aceito a prestação do serviço e condição de pagamento acima especificados.");
+                    }
+                });
+
+                jQuery("input:checkbox[id='sscForm:confidencial']").on("click", function () {
+                    if (jQuery(this).is(':checked')) {
+                        showMessageWarning("Trâmite confidencial, somente o usuário que cadastrou poderá visualizar.");
+                    }
+                });
+
+                jQuery("input:checkbox[id='sscForm:confidencial']").attr("disabled", true);
+
+                aplicarConfiguracoesVisualizacao();
+
+                $("#sscForm").validate({
+                    errorPlacement: function (error, element) {
+                        if (jQuery(element).attr('type') === "radio" && jQuery(element).parent().parent().parent().parent().hasClass("radio-button-situacao")) {
+                            error.appendTo('div.radio-button-situacao');
+                        } else if (jQuery(element).attr('type') === "radio" && jQuery(element).parent().parent().parent().parent().hasClass("radio-button-satisfacao")) {
+                            error.appendTo('div.radio-button-satisfacao');
+                        } else {
+                            error.appendTo(element.parent('div.form-group'));
+                        }
+
+                        showMessageError('Formulário incompleto: Favor revisar campo(s) marcado(s)');
+                    },
+                    rules: {
+                        "situacaoTramite": {
+                            required: true
+                        },
+                        "satistifacao": {
+                            requiredPesquisaSatisfacao: true
+                        },
+                        "sscForm:descricaoTramite": {
+                            requiredDescricaoTramite: true
+                        },
+                        "sscForm:descricaoInsatisfacao": {
+                            requiredDescricaoInsatisfacao: true
+                        }
+
+                    },
+                    messages: {
+                        "situacaoTramite": {
+                            required: "Situação é um campo obrigatório"
+                        },
+                        "satistifacao": {
+                            requiredPesquisaSatisfacao: "Favor selecionar uma das opções de Insatisfação."
+                        },
+                        "sscForm:descricaoTramite": {
+                            requiredDescricaoTramite: "Para a Situação selecionada, a Descrição é um campo obrigatório."
+                        },
+                        "sscForm:descricaoInsatisfacao": {
+                            requiredDescricaoInsatisfacao: "Para a opção de Insatisfação selecionada, um comentário da insatisfação é obrigatório."
+                        }
+                    }
+                });
+            });
+
+            $.validator.addMethod("requiredPesquisaSatisfacao", function (value, element) {
+                if (jQuery("input:radio[name='situacaoTramite']:checked").val() != "5") {
+                    return true;
+                }
+
+                return jQuery("input:radio[name='satistifacao']").is(":checked");
+            }, null);
+
+            $.validator.addMethod("requiredDescricaoTramite", function (value, element) {
+                if (jQuery("input:radio[name='situacaoTramite']:checked").val() == null || !jQuery("input:radio[name='situacaoTramite']:checked").hasClass("tramite-obrigatorio")) {
+                    return true;
+                }
+                if (jQuery("#" + $("form").attr("id") + "\\:descricaoTramite").val().length > 0) {
+                    return true;
+                }
+
+                return false;
+            }, null);
+
+            $.validator.addMethod("requiredDescricaoInsatisfacao", function (value, element) {
+                if (!jQuery("input:radio[name='satistifacao']:checked").hasClass("descricao-obrigatorio")) {
+                    return true;
+                }
+                if (jQuery("#" + $("form").attr("id") + "\\:descricaoInsatisfacao").val().length > 0) {
+                    return true;
+                }
+
+                return false;
+            }, null);
+
+            function habilitarConfidencial(situacao) {
+                if (situacao == 4) {
+                    jQuery("input:checkbox[id='sscForm:confidencial']").attr("disabled", false);
+                } else {
+                    jQuery("input:checkbox[id='sscForm:confidencial']").attr("disabled", true);
+                    jQuery("input:checkbox[id='sscForm:confidencial']").attr("checked", false);
+                }
+            }
+
+            function habilitarAceitarFaturamento(situacao) {
+            
+            }
+
+            function verificarPedidoFaturamento() {
+                var situacao = jQuery("input:radio[name='situacaoTramite']:checked").val();
+                var aceito = document.getElementById('sscForm:aceitarFaturamento');
+
+                if (3 == 19 && situacao == 4) {
+                    if (aceito.checked) {
+                        var descricao = "Atenção: Você está confirmando a execução do serviço descrito " +
+                                "neste atendimento e autorizada a cobrança de acordo com as condições especificadas no trâmite " +  + ".";
+                        showMessageConfirm("Você autoriza a execução do serviço?",
+                                descricao,
+                                "validarContatoPesquisaSatisfacao();");
+                    } else {
+                        var descricao = "Você NÃO autorizou a prestação do serviço \"\" no valor de R$ " +  + ".";
+                        showMessageConfirm("Deseja continuar mesmo assim?", descricao, "validarContatoPesquisaSatisfacao();");
+                    }
+
+                } else {
+                    validarContatoPesquisaSatisfacao();
+                }
+            }
+
+            function validarContatoPesquisaSatisfacao() {
+                const INSATISFEITO = 3;
+                if (document.getElementById("sscForm:sscSatisfacao").value == INSATISFEITO) {
+                    showMessageConfirmTwoActionsAndNoDescription("Gostaria de receber contato referente a sua insatisfação?",
+                            "document.getElementById('sscForm:permitirContatoAvaliarInsatisfacao').value = true; gravarTramite(); ",
+                            "document.getElementById('sscForm:permitirContatoAvaliarInsatisfacao').value = false; gravarTramite();");
+                } else {
+                    gravarTramite();
+                }
+            }
+
+            function gravarTramite() {
+                document.getElementById('sscForm:gravarTramiteBtn').click();
+            }
+
+            function validarFormulario() {
+                if ($("form").valid()) {
+                    verificarPedidoFaturamento();
+                }
+            }
+
+            function mostrarPesquisaSatisfacao(campo) {
+                const SITUACAO_CONCLUIDO = 5;
+                var possuiSscDadoFaturamento = document.getElementById('sscForm:possuiSscDadofaturamento');
+
+                if (jQuery(campo).val() == SITUACAO_CONCLUIDO &&
+                        (possuiSscDadoFaturamento.value != "true" || false)) {
+                    jQuery(".campos-pesquisa-satisfacao").css("display", "block");
+                    jQuery(".campos-resposta-suporte").css("display", "none");
+                    jQuery("#sscForm\\:descricaoSatisfacao").attr('disabled', false);
+                } else {
+                    jQuery(".campos-pesquisa-satisfacao").css("display", "none");
+                    jQuery(".campos-resposta-suporte").css("display", "block");
+                    jQuery("#sscForm\\:descricaoSatisfacao").attr('disabled', true);
+                }
+            }
+
+            function atribuirSatisfacao(div, resposta) {
+                if (resposta == "" || resposta == null) {
+                    return;
+                }
+
+                document.getElementById("sscForm:sscSatisfacao").value = resposta;
+
+                atribuirDestaqueSelecionado(div, resposta);
+            }
+
+            function atribuirDestaqueSelecionado(div, resposta) {
+                $(div).parent().find("span").css("color", "black");
+                $(div).parent().find("span").css("font-weight", "normal");
+                jQuery(div).find("span").css("color", "#FA6400");
+                jQuery(div).find("span").css("font-weight", "bold");
+
+                const SATISFEITO = 1;
+
+                if (resposta == 1) {
+                    jQuery(".bento-icon-thumbs-up").removeClass("icon-obfuscated");
+                    jQuery(".bento-icon-thumbs-up2").addClass("icon-obfuscated");
+                    jQuery(".campos-insatisfacao").css("display", "none");
+                    jQuery(".campos-satisfacao").css("display", "block");
+                } else {
+                    jQuery(".bento-icon-thumbs-up").addClass("icon-obfuscated");
+                    jQuery(".bento-icon-thumbs-up2").removeClass("icon-obfuscated");
+                    jQuery(".campos-insatisfacao").css("display", "block");
+                    jQuery(".campos-satisfacao").css("display", "none");
+                }
+            }
+
+            function atribuirMotivoInsatisfacao(resposta) {
+                document.getElementById("sscForm:sscMotivoInsatisfacao").value = resposta;
+            }
+
+            function confirmarAssinaturaSose() {
+                showMessageConfirm("Confirma a conferência e aceitação das informações contidas na SOSE?", "", "document.getElementById('sscForm:assinarSose').click();");
+            }
+            
+        </script>
+
+        <style>
+
+            .bento-icon-thumbs-up:not(.icon-obfuscated) {
+                color:#FA6400;
+            }
+
+            .bento-icon-thumbs-up2:not(.icon-obfuscated) {
+                color:#FA6400;
+            }
+
+            .campos-pesquisa-satisfacao,
+            .campos-insatisfacao,
+            .campos-satisfacao{
+                display: none;
+            }
+
+            .tramites a {
+                text-decoration: underline;
+            }
+            
+            .modal-footer-left {
+                justify-content: flex-start !important;
+            }
+            
+            .modal-dialog-usuario {
+		max-width: 550px;
+                margin: 1.75rem auto
+            }
+            
+
+        </style>
+
+        <div class="form-row form-row-title">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <h2>Dados da Solicitação</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="form-group ready-only">
+                    <label>Número</label>
+                    <label class="form-control">
+                        3365980
+                    </label>
+                </div>     
+            </div>
+            <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="form-group ready-only">
+                    <label>Entrada</label>
+                    <label class="form-control">
+                        <script type='text/javascript'>document.write(ajustarTempo(1686839249936,1689252273633,"dd/MM/yy HH:mm"));</script>
+                    </label>
+                </div>  
+            </div>
+            <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="form-group ready-only">
+                    <label>Situação</label>
+                    <label class="form-control">
+                        Respondido ao cliente
+                    </label>
+                </div>  
+            </div>
+            <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="form-group ready-only">
+                    <label>Módulo</label>
+                    <label class="form-control">
+                        Folha
+                    </label>
+                </div>   
+            </div>
+            <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="form-group ready-only">
+                    <label>Classificação</label>
+                    <label class="form-control">
+                        FUNCIONAL
+                    </label>
+                </div>  
+            </div>  
+
+            <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="form-group ready-only">
+                    <label>Usuário</label>
+                    <label class="form-control">
+                        
+                            
+                                <a href="#modalDefinirUsuario" data-toggle="modal"  data-codItem="22894268" data-user="veronica cristina vieira souza">
+                                    veronica cristina vieira souza 
+                                </a>
+                            
+                            
+                           
+                    </label> 
+                </div>  
+            </div> 
+
+            
+
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-10 col-xl-10">
+                <div class="form-group ready-only">
+                    <label>Estação de trabalho ou todo o escritório está sem acesso ao sistema</label>
+                    <label class="form-control" style="height:100%;">
+                        Não
+                    </label>
+                </div>  
+            </div>    
+
+        </div>
+
+        <div class="border-top my-4 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12"></div>
+
+        <div class="form-row form-row-title">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">      
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <h2>Assunto</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row form-row-title">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">      
+                Mensagem na guia Advertências: 'Erro 1727 - Foram encontradas advertências ao confirmar o fechamento da folha para o Sistema DCT
+            </div>
+        </div>
+            
+        <div class="border-top my-4 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12"></div>
+            
+        <div class="form-row form-row-title">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">      
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <h2>Descrição</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row form-row-title">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">      
+                Mensagem na guia Advertências: 'Erro 1727 - Foram encontradas advertências ao confirmar o fechamento da folha para o Sistema DCTF Web (446 - Transmissão da DCTFWeb realizada com sucesso. Se for o caso, acesse o Portal eCAC https://cav.receita.economia.gov.br para providenciar a geração do Documento de arrecadação)'.
+            </div>
+        </div>
+
+        
+
+
+        
+
+            <div class="border-top my-4 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12"></div>
+
+            <div class="form-row form-row-title">
+                <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">      
+                    <div class="d-flex">
+                        <div class="mr-auto">
+                            <h2>Trâmites</h2>
+                        </div>
+                        <div class="d-flex ustify-content-end mt-3">
+                            <div class="form-row ml-2">
+                                <div class="form-group col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class="form-check checkbox-slider--b checkbox-slider-form">
+                                        <label>
+                                            <input type="checkbox" name="sscForm:checkBoxTramitesRecentesTopo" id="sscForm:checkBoxTramitesRecentesTopo" value="true" onclick="alterarOrdemTramite(this);" /><span>Mais recentes no topo</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row ml-2">
+                                <div class="form-group col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class="form-check checkbox-slider--b checkbox-slider-form">
+                                        <label>
+                                            <input type="checkbox" name="sscForm:checkBoxVisualizacaoTramiteExpandidada" id="sscForm:checkBoxVisualizacaoTramiteExpandidada" value="true" onclick="visualizacaoExpandida(this, null, true);" /><span>Visualização expandida</span>                                        
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="accordion" class="d-flex flex-column bd-highlight tramites">       
+                
+                    <div class="card ">
+                        <div class="card-header " 
+                             id="headingThree" 
+                             aria-expanded="false" 
+                             style="cursor: pointer !important;"
+                             onclick="visualizacaoExpandida(null, this, true);
+                                     return false;">
+
+                            <div class="d-flex bd-highlight">
+                                <div class="flex-grow-1 bd-highlight"> 
+                                    <span class="status-indicator C1981CD">                                
+                                        01 <span> - Respondido ao cliente</span> <span> - 
+                                                
+                                                
+                                                    Raiane Gonçalves Arcanjo dos Santos 
+                                                
+                                            
+                                        </span>                                 
+                                    </span>                                       
+                                </div>
+                                <div class="bd-highlight">
+                                    <script type='text/javascript'>document.write(ajustarTempo(1686839249996,1689252273633,"dd/MM/yy HH:mm"));</script>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tramite_1" class="collapse card-body" aria-labelledby="headingThree" >
+                            <div class="card-body">         
+                                
+                                 
+
+                                                                   
+                                    
+                                        
+                                            <span>Olá, <br/><br/>Bom dia!<br/><br/><ul><br/><strong>Causa</strong><br/></ul><br/>Essa mensagem é gerada quando foi selecionada a opção de transmitir a DCTFWeb junto com o Fechamento do eSocial, e por garantia, o eSocial retorna com essa advertência apenas para que você acesse o Portal do eCac e confira se a transmissão foi feita com sucesso.<br/><br/><ul><br/><strong>Solução</strong><br/></ul><br/><strong>1 - </strong>Primeiramente avalie se a transmissão da DCTFWeb e os valores estão corretos;<br/><strong>2 - </strong>Após, na guia <strong>Advertência</strong>, na coluna <strong>Ajustada</strong>, selecione a opção <strong>&lsquo;[x]&rsquo;</strong>;<br/><strong>3 - </strong>Feche a janela e abra novamente, e veja que a advertência não será mais exibida;<br/><strong>4 - </strong>As mensagens geradas na guia<strong> Advertências</strong>, são apenas avisos e não impendem a transmissão dos eventos.<br/><br/><br/><br/>Outras respostas você encontra em nossa Central de Soluções, para acessar <a href='https://www.dominioatendimento.com:82/sgsc/faces/central-solucoes.html' target='_blank'>clique aqui</a>.<br/><br/>Caso ainda esteja com alguma dúvida referente ao assunto tratado neste atendimento favor nos retornar, mas se esta solicitação estiver resolvida, solicitamos por gentileza finalizar este atendimento selecionando no campo situação a opção "Concluído".</span>
+                                        
+                                    
+                                    
+                                    
+                                
+
+                                
+
+                                
+
+                                                                        
+
+                                
+
+                                
+
+                                
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+
+        
+
+
+        
+
+            <div class="border-top my-4 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12"></div>
+
+            <div class="card gerar-tramites resposta-cliente">
+                <div class="card-header">
+                    <div class="d-flex bd-highlight">
+                        <div class="flex-grow-1 bd-highlight"> 
+                            <span>
+                                INCLUIR TRÂMITE
+                            </span>                                       
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group radio-button-situacao col-sm-12 col-xs-6 col-md-6 col-lg-3 col-xl-3">
+                            <label>Situação</label>
+                            <div class="form-group">
+                                <div class="btn-group btn-group-toggle btn-group-justified" data-toggle="buttons">
+                                    
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" 
+                                                   name="situacaoTramite" 
+                                                   value="4"
+                                                   class="tramite-obrigatorio"
+                                                   onclick="mostrarPesquisaSatisfacao(this);
+                                                           habilitarConfidencial(this.value);
+                                                           habilitarAceitarFaturamento(this.value);">
+                                            Aguardando resposta do Suporte
+                                        </label>
+                                    
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" 
+                                                   name="situacaoTramite" 
+                                                   value="5"
+                                                   class=""
+                                                   onclick="mostrarPesquisaSatisfacao(this);
+                                                           habilitarConfidencial(this.value);
+                                                           habilitarAceitarFaturamento(this.value);">
+                                            Atendimento Concluído
+                                        </label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="campos-resposta-suporte">
+                        <div class="form-row">
+                            <div class="form-group col-sm-12 col-xs-12  col-md-7 col-lg-7 col-xl-7">
+                                <label for="descricaoTramite">Descrição</label>
+                                <textarea name="sscForm:descricaoTramite" id="sscForm:descricaoTramite" rows="7" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="form-row confidencial">
+                            <div class="form-group col-sm-12 col-xs-10 col-md-10 col-lg-5 col-xl-5">
+                                <div class="form-check checkbox-slider--b checkbox-slider-form">
+                                    <label>
+                                        <input type="checkbox" name="sscForm:confidencial" id="sscForm:confidencial" value="true" /><span>Confidencial</span>
+                                        <i class="bento-icon-info ml-2" data-toggle="tooltip" data-placement="top" title="Trâmite confidencial, somente o usuário que cadastrou poderá visualizar."></i>                                    
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-sm-12 col-xs-12  col-md-7 col-lg-7 col-xl-7 anexo"
+                                 id="anexos">
+                                <input id='attachTag_anexoTramite_folder' name='attachTag_anexoTramite_folder' type='hidden' value='stor_ebs_50/anexoss/2023-07'/>
+<input id='attachTag_anexoTramite_multi' name='attachTag_anexoTramite_multi' type='hidden' value='true'/>
+<input id='attachTag_anexoTramite_value' name='attachTag_anexoTramite_value' type='hidden' value=''/>
+<input id='attachTag_anexoTramite_names' name='attachTag_anexoTramite_names' type='hidden' value=''/>
+<input id='attachTag_anexoTramite_typeNotPermitted' name='attachTag_anexoTramite_typeNotPermitted' type='hidden' value='['dom']'/>
+<input id='attachTag_anexoTramite_size' name='attachTag_anexoTramite_size' type='hidden' value='100'/>
+<input id='attachTag_anexoTramite_ds' name='attachTag_anexoTramite_ds' type='hidden' value=''/>
+<script>  function carregarAnexo() { 
+     var i = 0; 
+     $('div.dz-preview').each(function (index) { 
+             if (i == 0) { 
+                 jQuery('#attachTag_anexoTramite_size').val($(this).find('strong').text()); 
+                 jQuery('#attachTag_anexoTramite_names').val($(this).find('.dz-filename').find('.nameFile').text()); 
+             } else { 
+                 jQuery('#attachTag_anexoTramite_size').val(jQuery('#attachTag_anexoTramite_size').val()+";"+$(this).find('strong').text()); 
+                 jQuery('#attachTag_anexoTramite_names').val(jQuery('#attachTag_anexoTramite_names').val()+";"+$(this).find('.dz-filename').find('.nameFile').text()); 
+             } 
+             i++; 
+         })
+
+      }; 
+
+ $(function () {
+ 
+        $('div#anexos').dropzone({  
+ 
+            url: '/Upload',
+            maxFilesize:100,
+            createImageThumbnails: false,
+            dictFileTooBig: 'dictFileTooBig',
+            accept: function (file, done) {
+              const extensionDontAllowed = ['dom'];
+              var extensionFile = file.name.split('.').pop().toLowerCase();
+              var ok = true;
+              for (var i = 0; i < extensionDontAllowed.length; i++) {
+                  if (extensionFile == extensionDontAllowed[i]) {
+                      ok = false;
+                      break;
+                  }
+              }
+              if (ok) {
+                  done();
+              } else {
+                  showMessageError('O arquivo possui formato não suportado.');
+                  this.removeFile(file);
+              }
+            },
+            maxThumbnailFilesize: '0',
+            thumbnailHeight: 'null',
+            thumbnailWidth: 'null',
+            previewTemplate: document.getElementById('template-preview').innerHTML,
+            previewsContainer: '.dropzone-previews',
+            addRemoveLinks: false,
+            timeout: 300000,
+            init: function () {
+               this.on("addedfile", function(file) {
+                    if (this.files.length) {
+                        var _i, _len;
+                       for (_i = 0, _len = this.files.length; _i < _len - 1; _i++) // -1 to exclude current file
+                        {
+                            if(this.files[_i].name === file.name)
+                            {
+                                showMessageErrorUnify('Arquivo ' + file.name + ' com nome duplicado, favor renomeá-lo.');
+                                this.removeFile(file);
+                            }
+                        }
+                    }
+                });                this.on('processing', function () {
+                    jQuery('.btn').addClass('disabled');
+                });
+                this.on('queuecomplete', function () {
+                    jQuery('.btn').removeClass('disabled');
+                });
+                this.on('removedfile', function () {
+                });
+                this.on('error', function (file, message) {
+                    if ('dictFileTooBig' == message) {
+                        showMessageErrorUnify('Arquivo ' + file.name + ' com tamanho maior que o máximo permitido.');
+                    }
+                    this.removeFile(file);
+                });
+            }
+        });
+    $('form').submit(function () {         carregarAnexo();    }); });
+</script>
+        <input hidden id='file' name='file' />        <div class='dropzone dropzone-file-area dropzone-previews'>            <div class='dz-default dz-message'>                <span class='bold'>Arraste um Arquivo aqui ou</span> </br>                <button class='ng-tns-c131-3 btn btn-primary ng-tns-c131-3 mt-2'                        onclick='return false;'>Localize um arquivo                    <i class='smart-wizard-bento-icon-chevron-right'></i>                </button>            </div>        </div><div id='template-preview'>    <div class='dz-preview dz-file-preview well' id='dz-preview-template'>        <div class='dz-image'><img data-dz-thumbnail=''></div>        <div class='dz-details'>            <button class='btn btn-secondary btn-wizzard-previous dz-filename dz-size dz-remove'                    type='button'>                <div class='dz-progress'><span class='dz-upload'                                               data-dz-uploadprogress></span>                </div>                <span class='nameFile' data-dz-name></span>                (<span data-dz-size></span>)                <span aria-hidden='true' class='bento-icon-close-x remove-file'                      style='font-size:10px !important;' data-dz-remove>                </span>            </button>        </div>        <div class='dz-success-mark'><span></span></div>        <div class='dz-error-message'><span data-dz-errormessage></span></div>    </div></div>
+
+                            </div>
+                        </div>    
+                    </div>
+
+                    
+                             
+                            <div class="campos-pesquisa-satisfacao">
+                                <div class="form-row form-row-title">
+                                    <div class="col-sm-12 col-xs-10 col-md-10 col-lg-5 col-xl-5">      
+                                        <div class="d-flex">
+                                            <div class="mr-auto">
+                                                <h3>Pesquisa de Satisfação</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                                        <label>Como você se sente em relação ao SUPORTE PRESTADO especificamente nesta solicitação?</label>
+                                    </div>
+                                    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                                        <div class="d-flex justify-content-start mb-3">
+                                            <div class="d-flex flex-column bd-highlight" onclick="atribuirSatisfacao(this, 1);">
+                                                <div class="p-1 bd-highlight">
+                                                    <i class="bento-icon-thumbs-up icon-obfuscated ml-1" style="font-size:50px !important;"></i>
+                                                </div>
+                                                <div class="p-1 bd-highlight">
+                                                    <span>
+                                                        Satisfeito
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column bd-highlight ml-5" onclick="atribuirSatisfacao(this, 3);">
+                                                <div class="p-1 bd-highlight">
+                                                    <i class="bento-icon-thumbs-up2 icon-obfuscated ml-2" style="font-size:50px !important;"></i>
+                                                </div>
+                                                <div class="p-1 bd-highlight">
+                                                    <span>
+                                                        Insatisfeito
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="campos-satisfacao">
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-12 col-xs-12  col-md-6 col-lg-6 col-xl-6">
+                                            <label for="descricaoInsatisfacao">Comentário sobre a satisfação: </label>
+                                            <textarea name="sscForm:descricaoSatisfacao" id="sscForm:descricaoSatisfacao" rows="2" class="form-control"></textarea>
+                                        </div>
+                                    </div>                                
+                                </div>
+                                        
+                                <div class="campos-insatisfacao">
+                                    <div class="form-row">
+                                        <div class="form-group radio-button-satisfacao col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                                            <label>Informe o que deu errado e nos ajude a melhorar:</label>
+                                            <div class="form-group">                                              
+                                                <div class="btn-group btn-group-toggle btn-group-justified" data-toggle="buttons">       
+                                                    
+                                                        <label class="btn btn-secondary">
+                                                            <input type="radio" 
+                                                                   name="satistifacao" 
+                                                                   class=""
+                                                                   value="1" 
+                                                                   onclick="atribuirMotivoInsatisfacao(this.value);
+                                                                           $('#sscForm\\:descricaoInsatisfacao').blur();">
+                                                            O problema não foi resolvido
+                                                        </label>
+                                                    
+                                                        <label class="btn btn-secondary">
+                                                            <input type="radio" 
+                                                                   name="satistifacao" 
+                                                                   class=""
+                                                                   value="2" 
+                                                                   onclick="atribuirMotivoInsatisfacao(this.value);
+                                                                           $('#sscForm\\:descricaoInsatisfacao').blur();">
+                                                            Esperei muito tempo pela resposta
+                                                        </label>
+                                                    
+                                                        <label class="btn btn-secondary">
+                                                            <input type="radio" 
+                                                                   name="satistifacao" 
+                                                                   class=""
+                                                                   value="3" 
+                                                                   onclick="atribuirMotivoInsatisfacao(this.value);
+                                                                           $('#sscForm\\:descricaoInsatisfacao').blur();">
+                                                            Não entendi a resposta
+                                                        </label>
+                                                    
+                                                        <label class="btn btn-secondary">
+                                                            <input type="radio" 
+                                                                   name="satistifacao" 
+                                                                   class=""
+                                                                   value="4" 
+                                                                   onclick="atribuirMotivoInsatisfacao(this.value);
+                                                                           $('#sscForm\\:descricaoInsatisfacao').blur();">
+                                                            Não fui bem atendido
+                                                        </label>
+                                                    
+                                                        <label class="btn btn-secondary">
+                                                            <input type="radio" 
+                                                                   name="satistifacao" 
+                                                                   class="descricao-obrigatorio"
+                                                                   value="5" 
+                                                                   onclick="atribuirMotivoInsatisfacao(this.value);
+                                                                           $('#sscForm\\:descricaoInsatisfacao').blur();">
+                                                            Desejo especificar outro motivo
+                                                        </label>
+                                                                                                       
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>     
+
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-12 col-xs-12  col-md-6 col-lg-6 col-xl-6">
+                                            <label for="descricaoInsatisfacao">Comentário sobre a insatisfação: </label>
+                                            <textarea name="sscForm:descricaoInsatisfacao" id="sscForm:descricaoInsatisfacao" rows="2" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="border-top my-4 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12"></div>
+                            </div>
+                        
+                    
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-12 col-xs-12  col-md-12 col-lg-12 col-xl-12">
+                            <div class="d-flex">
+                                <div class="p-1 mr-md-0">
+                                    <button type="button" class="btn btn-primary" onclick="return validarFormulario();">Gravar</button>
+                                    <script type="text/javascript"><!--
+function oamSetHiddenInput(formname, name, value){var form = document.forms[formname];if(typeof form.elements[name]=='undefined'){var newInput = document.createElement('input');newInput.setAttribute('type','hidden');newInput.setAttribute('id',name);newInput.setAttribute('name',name);newInput.setAttribute('value',value);form.appendChild(newInput);}else{form.elements[name].value=value;}}function oamClearHiddenInput(formname, name, value){var form = document.forms[formname];if(typeof form.elements[name]!='undefined'){form.elements[name].value=null;}}function oamSubmitForm(formName, linkId, target, params){var clearFn = 'clearFormHiddenParams_'+formName.replace(/-/g, '\$:').replace(/:/g,'_');if(typeof eval('window.'+clearFn)!='undefined'){eval('window.'+clearFn+'(formName)');}var oldTarget = '';if((typeof target!='undefined') && target != null){oldTarget=document.forms[formName].target;document.forms[formName].target=target;}if((typeof params!='undefined') && params != null){for(var i=0; i<params.length; i++){oamSetHiddenInput(formName,params[i][0], params[i][1]);}}oamSetHiddenInput(formName,formName +':'+'_idcl',linkId);if(document.forms[formName].onsubmit){var result=document.forms[formName].onsubmit();if((typeof result=='undefined')||result){document.forms[formName].submit();}}else {document.forms[formName].submit();}if(oldTarget==null) oldTarget='';document.forms[formName].target=oldTarget;if((typeof params!='undefined') && params != null){for(var i=0; i<params.length; i++){oamClearHiddenInput(formName,params[i][0], params[i][1]);}}oamClearHiddenInput(formName,formName +':'+'_idcl',linkId);return false;}
+//--></script><input id="sscForm:gravarTramiteBtn" name="sscForm:gravarTramiteBtn" type="submit" value="Gravar" onclick="if(typeof window.clearFormHiddenParams_sscForm!='undefined'){clearFormHiddenParams_sscForm('sscForm');}" class="btn btn-primary esconder" />                           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>          
+        
+
+        <div class="border-top my-4 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12"></div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-12 col-xs-10  col-md-10 col-lg-5 col-xl-5">
+                <div class="d-flex">                        
+                    <div class="p-1 mr-md-0">
+                        <input id="sscForm:_idJsp3" name="sscForm:_idJsp3" type="button" value="Voltar" onclick="navigate('/sgsc/faces/sscs.html');if(typeof window.clearFormHiddenParams_sscForm!='undefined'){clearFormHiddenParams_sscForm('sscForm');}" class="btn btn-secondary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+                    
+        <script type="text/javascript" src="/lib/jqueryMagnificPopup/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="/lib/jqueryMagnificPopup/theme.js"></script>
+        <link rel="stylesheet" href="/lib/jqueryMagnificPopup/magnific-popup.css">
+                             
+    <input type="hidden" name="sscForm_SUBMIT" value="1" /><input type="hidden" name="sscForm:_link_hidden_" /><input type="hidden" name="sscForm:_idcl" /><script type="text/javascript"><!--
+function clear_sscForm(){clearFormHiddenParams_sscForm('sscForm');}function clearFormHiddenParams_sscForm(currFormName){var f = document.forms['sscForm'];f.elements['sscForm:_link_hidden_'].value='';f.elements['sscForm:_idcl'].value='';f.target='';}clearFormHiddenParams_sscForm();
+//--></script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="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" /></form>
+    
+        <form id="sscResponsavelForm" name="sscResponsavelForm" method="post" action="/sgsc/faces/ssc.html" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="redirectInfo" value="/sgsc/faces/ssc.html,ssc"/>
+            <div class="modal fade modal-noticia" id="modalDefinirUsuario" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-ulg modal-dialog-centered modal-dialog-usuario" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Definir Responsável</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">  
+                            <div class="form-row">
+                                <div class="form-group col-sm-12 col-xs-12  col-md-12 col-lg-12 col-xl-12">
+                                    <input type="hidden" name="ssc" id="ssc" value="22894268"/>
+                                    <label class="control-label"class="control-label" for="observacao">Usuário atual: </label>
+                                    <label class="font-weight-bold" id="message-text"> Não informado </label>
+                                </div>
+                                <div class="form-group teste col-sm-12 col-xs-12  col-md-12 col-lg-12 col-xl-12">
+                                    <label class="control-label"class="control-label" for="observacao">Usuário novo: </label>
+                                    
+                                        
+                                    <select id="sscResponsavelForm:usuarioClienteNovo" name="sscResponsavelForm:usuarioClienteNovo" size="1" class="form-control">	<option value="0"></option>	<option value="121084">Anselmo Brito Santana Junior</option>	<option value="1105750">Gerente Anselmo</option>	<option value="1118391">Jorge Contabil</option>	<option value="617670">veronica cristina vieira souza</option></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer modal-footer-left">    
+                            <input id="sscResponsavelForm:gravarUsuario" name="sscResponsavelForm:gravarUsuario" type="submit" value="Salvar" onclick="disabledValidationForm();if(typeof window.clearFormHiddenParams_sscResponsavelForm!='undefined'){clearFormHiddenParams_sscResponsavelForm('sscResponsavelForm');}" class="btn btn-secondary" disabled="disabled" />
+                            <input type="button" value="Cancelar" class="btn btn-secondary" data-dismiss="modal"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <input type="hidden" name="sscResponsavelForm_SUBMIT" value="1" /><input type="hidden" name="sscResponsavelForm:_link_hidden_" /><input type="hidden" name="sscResponsavelForm:_idcl" /><script type="text/javascript"><!--
+function clear_sscResponsavelForm(){clearFormHiddenParams_sscResponsavelForm('sscResponsavelForm');}function clearFormHiddenParams_sscResponsavelForm(currFormName){var f = document.forms['sscResponsavelForm'];f.elements['sscResponsavelForm:_link_hidden_'].value='';f.elements['sscResponsavelForm:_idcl'].value='';f.target='';}clearFormHiddenParams_sscResponsavelForm();
+//--></script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="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" /></form>
+    
+        
+        <script>
+        $('#modalDefinirUsuario').on('show.bs.modal', event => {
+            $("#sscResponsavelForm\\:usuarioClienteNovo").prop('selectedIndex', 0);            
+            var origemId = $(event.relatedTarget);
+            var sscId = origemId.attr('data-codItem'); 
+            var sscUser = origemId.attr('data-user'); 
+            $("#ssc").val(sscId);
+            $('#message-text').html(sscUser);
+
+        });
+        
+        $('#sscResponsavelForm\\:usuarioClienteNovo').click(function()  {
+            if($("#sscResponsavelForm\\:usuarioClienteNovo").prop('selectedIndex') > 0){
+                $("#sscResponsavelForm\\:gravarUsuario").removeAttr('disabled');
+                
+            }else{
+                $("#sscResponsavelForm\\:gravarUsuario").attr('disabled', 'disabled');
+               
+            }
+        });
+    </script>
+
+                </div>
+        </main>
+    </div>
+    <div id='sidebarRight' class='notify'>
+         <div class='row profile'>
+             <div class='col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4' style='width:100%;'>
+                <div class='d-flex top-left-side' style='height:100%;'>
+                    <div class='align-self-center'>                            <img src='/inicio/imagens/notification-area/users.png'/>                    </div>
+                </div>
+             </div>
+             <div class='col-sm-8 col-xs-8 col-md-8 col-lg-8 col-xl-8' style='height:100%; width:100%;'>
+                <div class='d-flex flex-column' style='height:100%;'>
+                   <div class='pt-2'>
+                      <button type='button' class='close sidebar-right-collapse' aria-label='Fechar menu'>
+                         <i class='bento-icon-close-x mt-1' aria-hidden='true'></i>
+                       </button>
+                   </div>
+                   <div class='d-flex'>                        <h1 class='name'>null</h1>                   </div>                   <div class='d-flex d-flex mt-1'>                       <span class='email'>null</span>                   </div>                   <div class='d-flex  mt-2'>                        <a class='link-option' href='/sgsc/faces/alt-usuario.html'>Exibir Perfil</a>
+                   </div>                   <div class='d-flex align-self-end pb-3'>                       <button class='btn btn-primary btn-sm mr-3 mt-3 btn-logout' style='width:100px' onclick="window.location='/logout.html'">SAIR</button>
+                   </div>                </div>
+             </div>
+         </div>
+         <div class='row notification-area'>
+             <div class='tabset-datatable'>
+                 <ul class='nav nav-pills' id='pills-tab' role='tablist' style='padding-top:5px; background-color:#F4F5F7;'>
+                     <li class='nav-item pt-2 pl-2' role='presentation'>
+                         <a class='nav-link active' onclick='$('.btn-search-ftnotification').click();' id='pills-notification-tab' data-toggle='pill' href='#pills-notification' role='tab' aria-controls='pills-notification' aria-selected='true'>NOTIFICAÇÕES</a>
+                     </li>
+                 </ul>
+                 <div class='tab-content' style='min-height: 36px; background-color:#EFEFEF !important; border-bottom: 1px solid #ddd;'>
+                    <div class='d-flex justify-content-end'>                        <span class='link mt-2 mr-3 read-all' onclick='readAll();'>Marcar todos como lidos</a>                    </div>                 </div>
+                 <div class='tab-content' id='pills-tabContent'>  
+                     <div class='tab-pane active' id='pills-notification' role='tabpanel' aria-labelledby='pills-notification-tab'>
+                         <div class='d-flex flex-column notifications'>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </div>
+<script>    jQuery(document).ready(function() {   });</script><div id='divModalConfirmPage'></div>
+</body>
+</html>
+
+
+
+
